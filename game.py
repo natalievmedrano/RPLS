@@ -93,7 +93,14 @@ Spock vaporizes Rock
     def keep_score(self):
         print (f"Human Score {self.player1.score}")
         print (f"Ai Score {self.player2.score}")
-   
+
+
+
+    def game_winner(self):
+        if self.player1.score >= 2:
+            print("Human wins the game!")
+        elif self.player2.score >= 2:
+            print("Ai wins the game!")
     
     def choose_gestures(self):
         self.player1.choose_gesture()
@@ -105,6 +112,8 @@ Spock vaporizes Rock
                 self.keep_score()
                 self.choose_gestures()  
                 self.compare_gestures()
+                self.keep_score()
+                self.game_winner()
             #print()
             
             #print()
@@ -113,11 +122,7 @@ Spock vaporizes Rock
            # print('NEXT ROUND')
             
         
-    def game_winner(self):
-        if self.player1 >= 2:
-            print(f"{self.player1} wins the game!")
-        elif self.player2 >= 2:
-            print(f"{self.player2} wins the game!")
+    
     
     def run_game(self):
         self.display_greeting()
